@@ -1,5 +1,5 @@
 
-#include <c++/v1/bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 typedef struct Node{
@@ -48,7 +48,7 @@ void insert(Node** head, int d, int p)
 
 void print(Node *root){
     while(root!=NULL){
-        cout<<"|  "<<root->data<<" |  "<<root->priority<<" |  "<<endl<<"------------"<<endl;
+        cout<<"| "<<root->data<<" | "<<root->priority<<" |  "<<endl<<"++++++++++"<<endl;
         root=root->next;
     }
 }
@@ -65,9 +65,9 @@ int main(){
      insert(&head, 42, 5);
      insert(&head, 61, 1);
      insert(&head, 29, 8);
-    
+     cout<<"--D----P--\n";
      print(head);
-
+ 
    
     return 0;
 }
