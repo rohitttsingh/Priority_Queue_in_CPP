@@ -2,15 +2,15 @@
 #include <c++/v1/bits/stdc++.h>
 using namespace std;
 
-struct Node{
+typedef struct Node{
     int data;
     int priority;
     Node *next;
-};
+} Queue;
 
 Node * create( int data, int priority){
     
-    Node * Newnode = new Node();
+    Queue * Newnode = new Queue();
     Newnode->data=data;
     Newnode->priority=priority;
 
@@ -21,8 +21,8 @@ Node * create( int data, int priority){
 
 void insert(Node** head, int d, int p)
 {
-    Node* start = (*head);
-    Node* temp = create(d, p);
+    Queue* start = (*head);
+    Queue* temp = create(d, p);
   
     
     if ((*head)->priority > p)
@@ -48,23 +48,25 @@ void insert(Node** head, int d, int p)
 
 void print(Node *root){
     while(root!=NULL){
-        cout<<root->data<<"->"<<root->priority<<endl;
+        cout<<"|  "<<root->data<<" |  "<<root->priority<<" |  "<<endl<<"------------"<<endl;
         root=root->next;
     }
 }
+
+
 int main(){
     
-    Node *head = create(231, 2);
+    Queue *head = create(23, 2);
     
      insert(&head, 31, 4);
      insert(&head, 21, 7);
-     insert(&head, 1, 3);
-     insert(&head, 2, 6);
+     insert(&head, 19, 3) ;
+     insert(&head, 25, 6) ;
      insert(&head, 42, 5);
      insert(&head, 61, 1);
      insert(&head, 29, 8);
     
-    print(head);
+     print(head);
 
    
     return 0;
